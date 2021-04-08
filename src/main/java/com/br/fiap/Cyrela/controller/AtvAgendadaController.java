@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.beans.SimpleBeanInfo;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,5 +54,12 @@ public class AtvAgendadaController {
         return quantidade;
     }
 
-
+    @GetMapping("/abertos/{data}")
+    public List<AtvAgendadaDTO> listarAgendamentosAbertos(@PathVariable("data")String data) throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("ddMMyyyy");
+        SimpleDateFormat formatt = new SimpleDateFormat("dd/MM/yyyy");
+        formatt.format(format.parse(data));
+        List<AtvAgendadaEntity> entities = repository.agendamentosAbertosDetalhes(data);
+        return AtvAgendadaDTO.parseToDTO(entities);
+    }
 }
