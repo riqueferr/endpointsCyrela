@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-    @RequestMapping("/atividades-agendadas")
+@RequestMapping("/atividades-agendadas")
 public class AtvAgendadaController {
 
     @Autowired

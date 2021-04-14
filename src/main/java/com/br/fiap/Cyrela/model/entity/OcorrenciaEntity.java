@@ -98,4 +98,20 @@ public class OcorrenciaEntity {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public BlocoEntity getBloco() {
+        return bloco;
+    }
+
+    public void setBloco(BlocoEntity bloco) {
+        this.bloco = bloco;
+    }
+
+    public UnidadeEntity getUnidade() {
+        return unidade;
+    }
+
+    public void setUnidade(UnidadeEntity unidade) {
+        this.unidade = unidade;
+    }
 }

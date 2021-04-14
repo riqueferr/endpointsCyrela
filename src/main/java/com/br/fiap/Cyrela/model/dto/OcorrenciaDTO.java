@@ -8,6 +8,8 @@ import com.br.fiap.Cyrela.model.entity.UnidadeEntity;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class OcorrenciaDTO {
 
@@ -25,13 +27,17 @@ public class OcorrenciaDTO {
         this.numeroTicket = entity.getNumeroTicket();
         this.clienteUnidade = entity.getClienteUnidade();
         this.empreendimento = entity.getEmpreendimento();
-        //this.bloco = entity;
-        this.bandeira = bandeira;
-        this.unidade = unidade;
-        this.descricao = descricao;
+        this.bloco = entity.getBloco();
+        this.bandeira = entity.getBandeira();
+        this.unidade = entity.getUnidade();
+        this.descricao = entity.getDescricao();
     }
 
     public OcorrenciaDTO() {
+    }
+
+    public static List<OcorrenciaDTO> parseToDTO(List<OcorrenciaEntity> entities) {
+        return entities.stream().map(OcorrenciaDTO::new).collect(Collectors.toList());
     }
 
     public Long getId() {
@@ -90,11 +96,12 @@ public class OcorrenciaDTO {
         this.unidade = unidade;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescricao() { return descricao;
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+
 }

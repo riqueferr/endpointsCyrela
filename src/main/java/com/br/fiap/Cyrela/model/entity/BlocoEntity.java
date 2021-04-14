@@ -1,6 +1,7 @@
 package com.br.fiap.Cyrela.model.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "TB_BLOCO")
@@ -36,5 +37,20 @@ public class BlocoEntity {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BlocoEntity that = (BlocoEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(nome, that.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome);
     }
 }
