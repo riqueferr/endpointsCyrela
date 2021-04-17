@@ -28,6 +28,7 @@ public class AtvAgendadaController {
     @Autowired
     AtvAgendadaRepository repository;
 
+    //http://localhost:8080/atividades-agendadas
     @GetMapping
     public List<AtvAgendadaDTO> listar(){
         List<AtvAgendadaEntity> entities = repository.findAll();
@@ -54,12 +55,17 @@ public class AtvAgendadaController {
         return quantidade;
     }
 
-    @GetMapping("/abertos/{data}")
-    public List<AtvAgendadaDTO> listarAgendamentosAbertos(@PathVariable("data")String data) throws ParseException {
+    @GetMapping("/abertos")
+    public List<AtvAgendadaDTO> listarAgendamentosAbertos(@PathVariable("data")String data) {
         SimpleDateFormat format = new SimpleDateFormat("ddMMyyyy");
         SimpleDateFormat formatt = new SimpleDateFormat("dd/MM/yyyy");
-        formatt.format(format.parse(data));
-        List<AtvAgendadaEntity> entities = repository.agendamentosAbertosDetalhes(data);
+        String dataFormatada = null;
+        try {
+            dataFormatada = formatt.format(format.parse(data));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        List<AtvAgendadaEntity> entities = repository.agendamentosAbertosDetalhes(dataFormatada);
         return AtvAgendadaDTO.parseToDTO(entities);
     }
 }
