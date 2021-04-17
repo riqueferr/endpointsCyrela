@@ -1,30 +1,26 @@
-package com.br.fiap.Cyrela.model.entity;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package br.com.fiap.Cyrela.model.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TB_EMPREENDIMENTO")
-public class EmpreendimentoEntity {
-
+@Table(name = "TB_BLOCO")
+public class BlocoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_EMPREENDIMENTO")
+    @Column(name = "ID_BLOCO")
     private Long id;
 
-    @Column(name = "NM_EMPREENDIMENTO")
+    @Column(name = "NM_BLOCO")
     private String nome;
 
-    public EmpreendimentoEntity(Long id, String nome) {
+    public BlocoEntity(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public EmpreendimentoEntity() {
+    public BlocoEntity() {
     }
 
     public Long getId() {
@@ -43,12 +39,14 @@ public class EmpreendimentoEntity {
         this.nome = nome;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EmpreendimentoEntity that = (EmpreendimentoEntity) o;
-        return id.equals(that.id) && nome.equals(that.nome);
+        BlocoEntity that = (BlocoEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(nome, that.nome);
     }
 
     @Override

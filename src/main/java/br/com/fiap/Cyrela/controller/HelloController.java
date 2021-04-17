@@ -1,4 +1,4 @@
-package com.br.fiap.Cyrela.controller;
+package br.com.fiap.Cyrela.controller;
 
 
 import org.springframework.stereotype.Controller;

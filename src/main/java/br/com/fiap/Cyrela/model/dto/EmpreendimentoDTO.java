@@ -1,11 +1,7 @@
-package com.br.fiap.Cyrela.model.dto;
+package br.com.fiap.Cyrela.model.dto;
 
-import com.br.fiap.Cyrela.model.entity.EmpreendimentoEntity;
+import br.com.fiap.Cyrela.model.entity.EmpreendimentoEntity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -1,12 +1,10 @@
-package com.br.fiap.Cyrela.repository;
+package br.com.fiap.Cyrela.repository;
 
-import com.br.fiap.Cyrela.model.entity.AtvAgendadaEntity;
-import org.hibernate.annotations.SelectBeforeUpdate;
+import br.com.fiap.Cyrela.model.entity.AtvAgendadaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface AtvAgendadaRepository extends JpaRepository<AtvAgendadaEntity, Long> {

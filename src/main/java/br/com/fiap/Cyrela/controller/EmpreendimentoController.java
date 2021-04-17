@@ -1,8 +1,8 @@
-package com.br.fiap.Cyrela.controller;
+package br.com.fiap.Cyrela.controller;
 
-import com.br.fiap.Cyrela.model.dto.EmpreendimentoDTO;
-import com.br.fiap.Cyrela.model.entity.EmpreendimentoEntity;
-import com.br.fiap.Cyrela.repository.EmpreendimentoRepository;
+import br.com.fiap.Cyrela.model.dto.EmpreendimentoDTO;
+import br.com.fiap.Cyrela.model.entity.EmpreendimentoEntity;
+import br.com.fiap.Cyrela.repository.EmpreendimentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

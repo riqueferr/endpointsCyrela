@@ -1,10 +1,9 @@
-package com.br.fiap.Cyrela.controller;
+package br.com.fiap.Cyrela.controller;
 
-import com.br.fiap.Cyrela.model.dto.OcorrenciaDTO;
-import com.br.fiap.Cyrela.model.entity.OcorrenciaEntity;
-import com.br.fiap.Cyrela.repository.OcorrenciaRepository;
+import br.com.fiap.Cyrela.model.dto.OcorrenciaDTO;
+import br.com.fiap.Cyrela.model.entity.OcorrenciaEntity;
+import br.com.fiap.Cyrela.repository.OcorrenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

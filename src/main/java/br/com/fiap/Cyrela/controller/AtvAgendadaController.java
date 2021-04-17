@@ -1,25 +1,17 @@
-package com.br.fiap.Cyrela.controller;
+package br.com.fiap.Cyrela.controller;
 
-import com.br.fiap.Cyrela.model.dto.AtvAgendadaDTO;
-import com.br.fiap.Cyrela.model.dto.EmpreendimentoDTO;
-import com.br.fiap.Cyrela.model.entity.AtvAgendadaEntity;
-import com.br.fiap.Cyrela.model.entity.EmpreendimentoEntity;
-import com.br.fiap.Cyrela.repository.AtvAgendadaRepository;
+import br.com.fiap.Cyrela.model.dto.AtvAgendadaDTO;
+import br.com.fiap.Cyrela.model.entity.AtvAgendadaEntity;
+import br.com.fiap.Cyrela.repository.AtvAgendadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.beans.SimpleBeanInfo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/atividades-agendadas")

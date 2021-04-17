@@ -1,4 +1,4 @@
-package com.br.fiap.Cyrela.model.entity;
+package br.com.fiap.Cyrela.model.entity;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.br.fiap.Cyrela;
+package br.com.fiap.Cyrela;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

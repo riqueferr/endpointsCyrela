@@ -1,4 +1,4 @@
-package com.br.fiap.Cyrela;
+package br.com.fiap.Cyrela;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

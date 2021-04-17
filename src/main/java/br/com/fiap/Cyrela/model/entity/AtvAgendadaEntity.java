@@ -1,43 +1,53 @@
-package com.br.fiap.Cyrela.model.dto;
-
-import com.br.fiap.Cyrela.model.entity.AtvAgendadaEntity;
-import com.br.fiap.Cyrela.model.entity.BlocoEntity;
-import com.br.fiap.Cyrela.model.entity.EmpreendimentoEntity;
-import com.br.fiap.Cyrela.model.entity.UnidadeEntity;
+package br.com.fiap.Cyrela.model.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class AtvAgendadaDTO {
+@Entity
+@Table(name = "TB_ATV_AGENDADA")
+public class AtvAgendadaEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_AGENDA")
     private Long id;
+
+    @Column(name = "ACTUALSTART")
     private LocalDateTime dataInicio;
+
+    @Column(name = "ACTUALEND")
     private LocalDateTime dataTermino;
+
+    @Column(name = "PJO_TIPODEATIVIDADE")
     private String tipoAtividade;
+
+    @Column(name = "SUBJECT")
     private String assunto;
+
+    @ManyToOne
+    @JoinColumn(name = "PJO_EMPREENDIMENTOID")
     private EmpreendimentoEntity empreendimento;
+
+    @ManyToOne
+    @JoinColumn(name = "PJO_BLOCOID")
     private BlocoEntity bloco;
+
+    @ManyToOne
+    @JoinColumn(name = "PJO_UNIDADEID")
     private UnidadeEntity unidade;
 
-
-    public AtvAgendadaDTO(AtvAgendadaEntity entity) {
-        this.id = entity.getId();
-        this.dataInicio = entity.getDataInicio();
-        this.dataTermino = entity.getDataTermino();
-        this.tipoAtividade = entity.getTipoAtividade();
-        this.assunto = entity.getAssunto();
-        this.empreendimento = entity.getEmpreendimento();
-        this.bloco = entity.getBloco();
-        this.unidade = entity.getUnidade();
+    public AtvAgendadaEntity(Long id, LocalDateTime dataInicio, LocalDateTime daraTermino, String tipoAtividade, String assunto, EmpreendimentoEntity empreendimento, BlocoEntity bloco, UnidadeEntity unidade) {
+        this.id = id;
+        this.dataInicio = dataInicio;
+        this.dataTermino = daraTermino;
+        this.tipoAtividade = tipoAtividade;
+        this.assunto = assunto;
+        this.empreendimento = empreendimento;
+        this.bloco = bloco;
+        this.unidade = unidade;
     }
 
-    public static List<AtvAgendadaDTO> parseToDTO(List<AtvAgendadaEntity> entities) {
-        return entities.stream().map(AtvAgendadaDTO::new).collect(Collectors.toList());
-    }
-
-    public AtvAgendadaDTO() {
+    public AtvAgendadaEntity() {
     }
 
     public Long getId() {

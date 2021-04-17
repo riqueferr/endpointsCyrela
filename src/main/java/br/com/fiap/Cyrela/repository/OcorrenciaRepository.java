@@ -1,6 +1,6 @@
-package com.br.fiap.Cyrela.repository;
+package br.com.fiap.Cyrela.repository;
 
-import com.br.fiap.Cyrela.model.entity.OcorrenciaEntity;
+import br.com.fiap.Cyrela.model.entity.OcorrenciaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

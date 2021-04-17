@@ -1,13 +1,10 @@
-package com.br.fiap.Cyrela.model.dto;
+package br.com.fiap.Cyrela.model.dto;
 
-import com.br.fiap.Cyrela.model.entity.BlocoEntity;
-import com.br.fiap.Cyrela.model.entity.EmpreendimentoEntity;
-import com.br.fiap.Cyrela.model.entity.OcorrenciaEntity;
-import com.br.fiap.Cyrela.model.entity.UnidadeEntity;
+import br.com.fiap.Cyrela.model.entity.EmpreendimentoEntity;
+import br.com.fiap.Cyrela.model.entity.BlocoEntity;
+import br.com.fiap.Cyrela.model.entity.OcorrenciaEntity;
+import br.com.fiap.Cyrela.model.entity.UnidadeEntity;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.List;
 import java.util.stream.Collectors;
 
