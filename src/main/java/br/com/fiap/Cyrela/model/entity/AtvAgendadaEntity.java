@@ -36,10 +36,10 @@ public class AtvAgendadaEntity {
     @JoinColumn(name = "PJO_UNIDADEID")
     private UnidadeEntity unidade;
 
-    public AtvAgendadaEntity(Long id, LocalDateTime dataInicio, LocalDateTime daraTermino, String tipoAtividade, String assunto, EmpreendimentoEntity empreendimento, BlocoEntity bloco, UnidadeEntity unidade) {
+    public AtvAgendadaEntity(Long id, LocalDateTime dataInicio, LocalDateTime dataTermino, String tipoAtividade, String assunto, EmpreendimentoEntity empreendimento, BlocoEntity bloco, UnidadeEntity unidade) {
         this.id = id;
         this.dataInicio = dataInicio;
-        this.dataTermino = daraTermino;
+        this.dataTermino = dataTermino;
         this.tipoAtividade = tipoAtividade;
         this.assunto = assunto;
         this.empreendimento = empreendimento;

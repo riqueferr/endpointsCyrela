@@ -47,17 +47,17 @@ public class AtvAgendadaController {
         return quantidade;
     }
 
-    @GetMapping("/abertos")
-    public List<AtvAgendadaDTO> listarAgendamentosAbertos(@PathVariable("data")String data) {
-        SimpleDateFormat format = new SimpleDateFormat("ddMMyyyy");
-        SimpleDateFormat formatt = new SimpleDateFormat("dd/MM/yyyy");
-        String dataFormatada = null;
-        try {
-            dataFormatada = formatt.format(format.parse(data));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        List<AtvAgendadaEntity> entities = repository.agendamentosAbertosDetalhes(dataFormatada);
-        return AtvAgendadaDTO.parseToDTO(entities);
-    }
+//    @GetMapping("/abertos")
+//    public List<AtvAgendadaDTO> listarAgendamentosAbertos(@PathVariable("data")String data) {
+//        SimpleDateFormat format = new SimpleDateFormat("ddMMyyyy");
+//        SimpleDateFormat formatt = new SimpleDateFormat("dd/MM/yyyy");
+//        String dataFormatada = null;
+//        try {
+//            dataFormatada = formatt.format(format.parse(data));
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        List<AtvAgendadaEntity> entities = repository.agendamentosAbertosDetalhes(dataFormatada);
+//        return AtvAgendadaDTO.parseToDTO(entities);
+//    }
 }
