@@ -20,14 +20,14 @@ public class AtvAgendadaController {
     @Autowired
     AtvAgendadaRepository repository;
 
-    //http://localhost:8080/atividades-agendadas
+    //http://localhost:8080/cyrela/atividades-agendadas
     @GetMapping
     public List<AtvAgendadaDTO> listar(){
         List<AtvAgendadaEntity> entities = repository.findAll();
         return AtvAgendadaDTO.parseToDTO(entities);
     }
 
-    //http://localhost:8080/atividades-agendadas/empreendimentos?empreendimento=Lins+de+Vasconcelos
+    //http://localhost:8080/cyrela/atividades-agendadas/empreendimentos?empreendimento=Lins+de+Vasconcelos
     @GetMapping("/empreendimentos")
     public List<AtvAgendadaDTO> listarPorEmpreendimento(String empreendimento) {
         if (empreendimento == null) {
@@ -39,7 +39,7 @@ public class AtvAgendadaController {
         }
     }
 
-    //http://localhost:8080/atividades-agendadas/empreendimentos/quantidade-abertos?empreendimento=Lins+de+Vasconcelos
+    //http://localhost:8080/cyrela/atividades-agendadas/empreendimentos/quantidade-abertos?empreendimento=Lins+de+Vasconcelos
     @GetMapping("/empreendimentos/quantidade-abertos")
     public Long contar(String empreendimento) {
         String entity = repository.contarVisitasAbertasPorEmpreendimento(empreendimento);

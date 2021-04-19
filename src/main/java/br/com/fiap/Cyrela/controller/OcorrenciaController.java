@@ -22,14 +22,14 @@ public class OcorrenciaController {
     @Autowired
     OcorrenciaRepository repository;
 
-    //http://localhost:8080/ocorrencias
+    //http://localhost:8080/cyrela/ocorrencias
     @GetMapping
     public List<OcorrenciaDTO> listarTodasAsOcorrencias() {
         List<OcorrenciaEntity> entities = repository.findAll();
         return OcorrenciaDTO.parseToDTO(entities);
     }
 
-    //http://localhost:8080/ocorrencias/3
+    //http://localhost:8080/cyrela/ocorrencias/3
     @GetMapping("/{id}")
     public ResponseEntity<OcorrenciaDTO> buscarPorId(@PathVariable("id") Long id) {
         Optional<OcorrenciaEntity> entity = repository.findById(id);
@@ -39,7 +39,7 @@ public class OcorrenciaController {
         return ResponseEntity.notFound().build();
     }
 
-    //http://localhost:8080/ocorrencias/ticket/876621213
+    //http://localhost:8080/cyrela/ocorrencias/ticket/876621213
     @GetMapping("/ticket/{ticket}")
     public ResponseEntity<OcorrenciaDTO> buscarPorTicket(@PathVariable("ticket") Long ticket) {
         Optional<OcorrenciaEntity> entity = repository.buscarPorTicket(ticket);
